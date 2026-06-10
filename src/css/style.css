@@ -14,23 +14,48 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+}
+
+.main-content {
+    flex: 1 0 auto;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 html{
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 #header{
@@ -556,6 +581,7 @@ h1, p, h2{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-shrink: 0;
 }
 
 .logo-footer{
@@ -701,14 +727,6 @@ h1, p, h2{
 
 }
 
-.login-input__container{
-
-}
-
-.register-input__container{
-
-}
-
 .text-input{
     font-family: Inter;
     font-weight: 400;
@@ -797,10 +815,6 @@ h1, p, h2{
     align-items: center;
     justify-content: center;
     cursor: pointer;
-}
-
-.other-login__logo{
-    
 }
 
 .auth-image{
@@ -1044,8 +1058,6 @@ h1, p, h2{
     margin-top: 10px;
     line-height: 1.2;
 }
-
-
 
 .list-docks{
     margin-top: 57px;
@@ -1487,7 +1499,11 @@ th, td{
     opacity: 0.9;
 }
 
-
+.error-message__date{
+    color: #FF5959;
+    text-align: center;
+    margin-bottom: -20px;
+}
 
 @media screen and (min-width: 1440px){
     #limit{
@@ -1602,6 +1618,7 @@ th, td{
 
     #footer{
         padding: 0 45px 0 60px;
+        flex-shrink: 0;
     }
 
     .logo-footer{
@@ -1617,11 +1634,14 @@ th, td{
         height: 144px;
     }
 
+
+
     .autorization-desktop{
         padding: 69px 60px 80px;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        flex: 1 0 auto;
     }
     
     .auth-image{
@@ -1784,7 +1804,6 @@ th, td{
         justify-content: center;
         box-sizing: border-box;
     }
-
     
     .title-checkbox.checked {
         color: black;

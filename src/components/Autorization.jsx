@@ -288,16 +288,7 @@ export function Autorization()
                         </div>
                         <div className="input__container">
                             {renderInputLogin()}
-                            <div className="register-input__container">
-                                <p className="text-input">Пароль:</p>
-                                <input 
-                                    type="password" 
-                                    placeholder="Введите текст" 
-                                    className="input-auth password"
-                                    value={passwordValue}
-                                    onChange={handlePasswordChange}
-                                />
-                            </div>
+                            {renderInputPassword()}
                         </div>
                         {renderButton()}
                         <a className="recover-password">Восстановить пароль</a>

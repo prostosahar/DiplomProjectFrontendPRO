@@ -27,30 +27,30 @@ function App() {
   }, []);
 
   const openBurger = () => {
-    console.log("openBurger called"); // Проверка
+    console.log("openBurger called");
     setIsBurgerOpen(true);
   };
 
   const closeBurger = () => {
-    console.log("closeBurger called"); // Проверка
+    console.log("closeBurger called");
     setIsBurgerOpen(false);
   };
 
-  console.log("isBurgerOpen:", isBurgerOpen); // Проверка состояния
-
   return (
-    <>
+    <div className="app-wrapper">
       <Header onBurgerClick={openBurger} isLargeScreen={isLargeScreen} />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/autorization" element={<Autorization />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/result-search" element={<ResultSearch />} />
-      </Routes>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/autorization" element={<Autorization />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/result-search" element={<ResultSearch />} />
+        </Routes>
+      </main>
       <Footer />
       
       {isBurgerOpen && <MenuBurger onClose={closeBurger} />}
-    </>
+    </div>
   );
 }
 
